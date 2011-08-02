@@ -61,6 +61,8 @@
 #define SCPLL_NOMINAL_VDD	1100000 /* uV */
 #define MAX_BOOT_KHZ		1188000 /* KHz */
 
+#define FREQ_TBL_SIZE		18
+
 /* SCPLL Modes. */
 #define SCPLL_POWER_DOWN	0
 #define SCPLL_BYPASS		1
@@ -759,7 +761,7 @@ static void __init bus_init(void)
 }
 
 #ifdef CONFIG_CPU_FREQ_MSM
-static struct cpufreq_frequency_table freq_table[NR_CPUS][20];
+static struct cpufreq_frequency_table freq_table[NR_CPUS][FREQ_TBL_SIZE];
 
 static void __init cpufreq_table_init(void)
 {
